@@ -1,0 +1,15 @@
+services:
+  cudaq:
+    image: nvcr.io/nvidia/quantum/cuda-quantum:0.8.0
+    volumes:
+      - ./assets:/mnt/assets
+    entrypoint:
+      - bash
+      - -c
+      - |
+        whoami
+        id -u
+        id -g
+        ls -lah /mnt
+        ls -lah /mnt/assets
+        touch /mnt/assets/asset_compose
